@@ -69,7 +69,7 @@ public class GUICommand implements CommandExecutor {
 							return true;
 						}
 						player.sendMessage(ChatColor.GREEN + "Creating GUI event for " + ChatColor.DARK_GREEN + event);
-						handler.registerEvent(new EventData(event, null)); // TODO: Store this
+						handler.registerEvent(new EventData(event, null));
 						return true;
 					}
 					player.sendMessage(ChatColor.DARK_RED + "create" + ChatColor.RED + " requires an inventory size (must be a multiple of 9). An inventory name is optional. Example: " + ChatColor.DARK_RED + "/gui create na-servers 9 &4&lNA Servers");
@@ -132,6 +132,9 @@ public class GUICommand implements CommandExecutor {
 							player.sendMessage(ChatColor.DARK_RED + event + ChatColor.RED + " is not a valid event. Use " + ChatColor.DARK_RED + "/gui event list" + ChatColor.RED + " to list events.");
 							return false;
 						}
+					} else {
+						player.sendMessage(ChatColor.RED + "Please specify an event name to test invokation. Example: /gui event MyEvent");
+						return false;
 					}
 				} else if(strings[0].equalsIgnoreCase("item")) {
 					if(strings.length > 1) {
@@ -154,6 +157,7 @@ public class GUICommand implements CommandExecutor {
 							}
 						}
 					} else {
+						player.sendMessage(ChatColor.RED + "Possible subcommands: list, set");
 						return false;
 					}
 				}
