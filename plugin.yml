@@ -8,5 +8,21 @@ commands:
   gui create:
     description: Creates a new GUI that will be displayed when the designated event is invoked
     usage: |
+      /gui create [event_naem]
       /gui create [event_name] [inventory_size]
       /gui create [event_name] [inventory_size] [display_name(vargs)]
+  gui event:
+    description: Invoke / modify an existing GUI event
+    usage: |
+      /gui event MyEvent
+      /gui event MyEvent edit
+      /gui event MyEvent message &aWelcome to my server!
+      /gui event MyEvent join HUB-1
+  gui event list:
+    description: Lists all the GUI events stored in the handler
+  gui item list:
+    description: Lists all the item invokers stored in the handler
+  gui item set:
+    description: "Adds event invokation to an item. NOTE: This item only stores display name, material, lore, and durability in MongoStorage and is only invoked while clicked inside a Chest GUI"
+    usage: |
+      /gui item set MyEvent
