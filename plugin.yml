@@ -1,0 +1,12 @@
+name: EasyGUI
+version: 1.0
+author: Aspecting
+main: net.aspecter.easygui.EasyGUI
+commands:
+  gui:
+    description: Displays an about message
+  gui create:
+    description: Creates a new GUI that will be displayed when the designated event is invoked
+    usage: |
+      /gui create [event_name] [inventory_size]
+      /gui create [event_name] [inventory_size] [display_name(vargs)]
