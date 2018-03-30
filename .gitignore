@@ -50,3 +50,4 @@ fabric.properties
 
 # Custom
 .DS_Store
+target/
