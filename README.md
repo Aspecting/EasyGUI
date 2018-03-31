@@ -10,7 +10,7 @@ Plugin plugin = getServer().getPluginManager().getPlugin("EasyGUI");
 if(plugin == null || !(plugin instanceof EasyGUI)) {
   log.severe("Couldn't find EasyGUI!");
 } else {
-  guiPlugin = plugin;
+  guiPlugin = (EasyGUI)plugin;
 }
 ```
 **While storage is handled for `inventory`, `join` and `message`, you must (as of now) provide a Storage implementation to store your custom event internally.** 
